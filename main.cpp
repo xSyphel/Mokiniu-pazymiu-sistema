@@ -83,7 +83,30 @@ int main() {
             }
             break;
         case 3: 
-            cout << "3. Peržiūrėti konkretaus mokinio pažymius." << endl;
+            if (mokiniuKiekis == 0) {
+            cout << "Sąrašas tuščias." << endl;
+            break;
+            }
+
+            int nr;
+            cout << "Įveskite mokinio numerį (1-" << mokiniuKiekis << "): ";
+            cin >> nr;
+
+            while (nr < 1 || nr > mokiniuKiekis) {
+                cout << "Neteisingas mokinio numeris. Įveskite skaičių nuo 1 iki " << mokiniuKiekis << ": ";
+                cin >> nr;
+            }
+
+            int i = nr - 1;
+
+            cout << vardai[i] << ": ";
+            if (pazymiuKiekis[i] == 0) {
+                cout << "pažymių nėra.";
+            }
+            for (int j = 0; j < pazymiuKiekis[i]; j++) {
+                cout << pazymiai[i][j] << " ";
+            }
+            cout << endl;
             break;
         case 4:
             cout << "4. Atnaujinti pažymį." << endl;
