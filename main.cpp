@@ -15,13 +15,13 @@ int main() {
     int mokiniuKiekis = 0;
 
     do {
-        cout << "1. Įvesti mokinį ir jo pažymius." << endl;
-        cout << "2. Peržiūrėti visų mokinių pažymius." << endl;
-        cout << "3. Peržiūrėti konkretaus mokinio pažymius." << endl;
-        cout << "4. Atnaujinti pažymį." << endl;
-        cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
-        cout << "6. Pašalinti mokinį." << endl;
-        cout << "7. Išeiti." << endl;
+        cout << "1. Ivesti mokini ir jo pazymius." << endl;
+        cout << "2. Perziureti visu mokiniu pazymius." << endl;
+        cout << "3. Perziureti konkretaus mokinio pazymius." << endl;
+        cout << "4. Atnaujinti pazymi." << endl;
+        cout << "5. Apskaiciuoti mokinio vidurki." << endl;
+        cout << "6. Pasalinti mokini." << endl;
+        cout << "7. Iseiti." << endl;
         cout << "Pasirinkite veiksma: " << endl;
 
         cin >> choice;
@@ -53,12 +53,25 @@ int main() {
                 };
             }
 
-            cout << "Mokinys \"" << vardai[mokiniuKiekis] << "\" pridėtas su " << n << " pažymiais." << endl;
+            cout << "Mokinys \"" << vardai[mokiniuKiekis] << "\" pridetas su " << n << " pazymiais." << endl;
             pazymiuKiekis[mokiniuKiekis] = n;
             mokiniuKiekis++;
             break;
         case 2:
-            cout << "2. Peržiūrėti visų mokinių pažymius." << endl;
+            if (mokiniuKiekis == 0) {
+                cout << "Sąrašas tuščias." << endl;
+                break;
+            }
+
+            for (int i = 0; i < mokiniuKiekis; i++) {
+                cout << i + 1 << ". " << vardai[i] << ": ";
+
+                for (int j = 0; j < pazymiuKiekis[i]; j++) {
+                    cout << pazymiai[i][j] << " ";
+                }
+
+                cout << endl;
+            }
             break;
         case 3: 
             cout << "3. Peržiūrėti konkretaus mokinio pažymius." << endl;
@@ -83,4 +96,4 @@ int main() {
     }   while(choice != 7);
 
 return 0;
-}
+};
