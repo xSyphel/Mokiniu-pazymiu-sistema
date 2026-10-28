@@ -31,6 +31,10 @@ int main() {
         switch (choice)
         {
         case 1:
+            if (mokiniuKiekis >= MAX_MOKINIU) {
+                cout << "Pasiektas mokinių limitas (" << MAX_MOKINIU << ")." << endl;
+                break;
+            }
             cout << "Koks mokinio vardas? ";
             cin.ignore();
             getline(cin, vardai[mokiniuKiekis]);
@@ -43,6 +47,11 @@ int main() {
             int n;
             cout << "Kiek pazymiu turi mokinys? ";
             cin >> n;
+            
+            while (n < 0 || n > MAX_PAZYMIU) {
+                cout << "Pažymių kiekis turi būti nuo 0 iki " << MAX_PAZYMIU << ". Įveskite iš naujo: ";
+                cin >> n;
+            }
 
             for (int j = 0; j < n; j++) {
                 cout << "Iveskite " << j + 1 << " Pazymi: ";
@@ -83,7 +92,7 @@ int main() {
             cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
             break;
         case 6:
-            cout << "6. Pašalinti mokinį." << endl;
+            cout << "6. Pašalinti mokini." << endl;
             break;
         case 7:
             cout << "7. Išeiti." << endl;
