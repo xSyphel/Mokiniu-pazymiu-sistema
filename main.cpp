@@ -1,9 +1,18 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
     int choice;
+
+    const int MAX_MOKINIU = 100;
+    const int MAX_PAZYMIU = 10;
+
+    string vardai[MAX_MOKINIU];
+    int pazymiai[MAX_MOKINIU][MAX_PAZYMIU];
+    int pazymiuKiekis[MAX_MOKINIU];
+    int mokiniuKiekis = 0;
 
     do {
         cout << "1. Įvesti mokinį ir jo pažymius." << endl;
@@ -44,7 +53,7 @@ int main() {
             break;
         default:
             cout << "neteisingas pasirinkimas, bandykite dar karta.";
-            continue;
+            break;
         }
 
     }   while(choice != 7);
