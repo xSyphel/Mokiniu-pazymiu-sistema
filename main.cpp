@@ -34,15 +34,26 @@ int main() {
             cout << "Koks mokinio vardas? ";
             cin.ignore();
             getline(cin, vardai[mokiniuKiekis]);
+            
+            while (vardai[mokiniuKiekis].empty()) {
+                cout << "Vardas negali buti tuscias. Iveskite is naujo: ";
+                getline(cin, vardai[mokiniuKiekis]);
+            }
+            
             int n;
             cout << "Kiek pazymiu turi mokinys? ";
             cin >> n;
 
             for (int j = 0; j < n; j++) {
                 cout << "Iveskite " << j + 1 << " Pazymi: ";
-                cin >> pazymiai[mokiniuKiekis][j];                
+                cin >> pazymiai[mokiniuKiekis][j]; 
+                while (pazymiai[mokiniuKiekis][j] < 1 || pazymiai[mokiniuKiekis][j] > 10) {
+                    cout << "Pazymys turi buti nuo 1 iki 10. iveskite is naujo: ";
+                    cin >> pazymiai[mokiniuKiekis][j];
+                };
             }
 
+            cout << "Mokinys \"" << vardai[mokiniuKiekis] << "\" pridėtas su " << n << " pažymiais." << endl;
             pazymiuKiekis[mokiniuKiekis] = n;
             mokiniuKiekis++;
             break;
