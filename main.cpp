@@ -22,7 +22,7 @@ int main() {
         cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
         cout << "6. Pašalinti mokinį." << endl;
         cout << "7. Išeiti." << endl;
-        cout << "Pasirinkite veiksma: ";
+        cout << "Pasirinkite veiksma: " << endl;
 
         cin >> choice;
 
@@ -32,7 +32,19 @@ int main() {
         {
         case 1:
             cout << "Koks mokinio vardas? ";
-            cin >> vardai[mokiniuKiekis];
+            cin.ignore();
+            getline(cin, vardai[mokiniuKiekis]);
+            int n;
+            cout << "Kiek pazymiu turi mokinys? ";
+            cin >> n;
+
+            for (int j = 0; j < n; j++) {
+                cout << "Iveskite " << j + 1 << " Pazymi: ";
+                cin >> pazymiai[mokiniuKiekis][j];                
+            }
+
+            pazymiuKiekis[mokiniuKiekis] = n;
+            mokiniuKiekis++;
             break;
         case 2:
             cout << "2. Peržiūrėti visų mokinių pažymius." << endl;
