@@ -5,9 +5,20 @@ using namespace std;
 int main() {
     int choice;
 
-    cin >> choice;
-
     do {
+        cout << "1. Įvesti mokinį ir jo pažymius." << endl;
+        cout << "2. Peržiūrėti visų mokinių pažymius." << endl;
+        cout << "3. Peržiūrėti konkretaus mokinio pažymius." << endl;
+        cout << "4. Atnaujinti pažymį." << endl;
+        cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
+        cout << "6. Pašalinti mokinį." << endl;
+        cout << "7. Išeiti." << endl;
+        cout << "Pasirinkite veiksma: ";
+
+        cin >> choice;
+
+        cout << "Pasirinkote: " << choice << endl;
+        
         switch (choice)
         {
         case 1:
