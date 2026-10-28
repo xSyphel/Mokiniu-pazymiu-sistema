@@ -31,7 +31,8 @@ int main() {
         switch (choice)
         {
         case 1:
-            cout << "1. Įvesti mokinį ir jo pažymius." << endl;
+            cout << "Koks mokinio vardas? ";
+            cin >> vardai[mokiniuKiekis];
             break;
         case 2:
             cout << "2. Peržiūrėti visų mokinių pažymius." << endl;
