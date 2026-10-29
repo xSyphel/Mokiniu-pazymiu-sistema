@@ -30,7 +30,7 @@ int main() {
         
         switch (choice)
         {
-        case 1:
+        case 1: {
             if (mokiniuKiekis >= MAX_MOKINIU) {
                 cout << "Pasiektas mokinių limitas (" << MAX_MOKINIU << ")." << endl;
                 break;
@@ -66,6 +66,7 @@ int main() {
             pazymiuKiekis[mokiniuKiekis] = n;
             mokiniuKiekis++;
             break;
+            }
         case 2:
             if (mokiniuKiekis == 0) {
                 cout << "Sąrašas tuščias." << endl;
@@ -82,7 +83,7 @@ int main() {
                 cout << endl;
             }
             break;
-        case 3: 
+        case 3: {
             if (mokiniuKiekis == 0) {
             cout << "Sąrašas tuščias." << endl;
             break;
@@ -108,6 +109,7 @@ int main() {
             }
             cout << endl;
             break;
+            }
         case 4:
             cout << "4. Atnaujinti pažymį." << endl;
             break;
