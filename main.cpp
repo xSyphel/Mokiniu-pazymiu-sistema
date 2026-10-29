@@ -148,7 +148,7 @@ int main() {
             cout << "Dabartinis pazymys: " << pazymiai[i][j] << ". Iveskite nauja: ";
             cin >> naujas;
 
-            while (naujas < 1 | naujas > 10) {
+            while (naujas < 1 || naujas > 10) {
                 cout << "Pazymys turi buti nuo 1 iki 10. Iveskite is naujo: ";
                 cin >> naujas;
             }
