@@ -116,18 +116,47 @@ int main() {
         case 5:
             cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
             break;
-        case 6:
-            cout << "6. Pašalinti mokini." << endl;
+        case 6: {
+            if (mokiniuKiekis == 0) {
+                cout << "Sąrašas tuščias." << endl;
+                break;
+            }
+            
+            int nr;
+            cout << "Iveskite salinamo mokinio numeri (1-" << mokiniuKiekis << "): ";
+            cin >> nr;
+
+            cout << "Neteisingas mokinio numeris. Iveskite skaiciu nuo 1 iki " << mokiniuKiekis << ": ";
+            while (nr < 1 || nr > mokiniuKiekis) {
+                cin >> nr;
+            }
+
+            int i = - 1;
+            string pasalintas = vardai[i];
+
+            for (int k = i; k < mokiniuKiekis - 1; k++) {
+                vardai[k] = vardai [k + 1];
+                pazymiuKiekis[k] = pazymiuKiekis[k + 1];
+
+                for (int j = 0; j < pazymiuKiekis[k]; j++) {
+                    pazymiai[k][j] = pazymiai[k + 1][j];
+                }
+            }
+
+            mokiniuKiekis--;
+
+            cout << "Mokinys \"" << pasalintas << "\" pasalintas." << endl;
             break;
+        }
         case 7:
-            cout << "7. Išeiti." << endl;
+            cout << "Iseiti" << endl;
             break;
         default:
-            cout << "neteisingas pasirinkimas, bandykite dar karta.";
+            cout << "neteisingas pasirinkimas, bandykite dar karta." << endl;
             break;
         }
 
     }   while(choice != 7);
 
 return 0;
-};
+}
