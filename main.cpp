@@ -198,16 +198,16 @@ int main() {
             cout << "Iveskite salinamo mokinio numeri (1-" << mokiniuKiekis << "): ";
             cin >> nr;
 
-            cout << "Neteisingas mokinio numeris. Iveskite skaiciu nuo 1 iki " << mokiniuKiekis << ": ";
             while (nr < 1 || nr > mokiniuKiekis) {
+                cout << "Neteisingas mokinio numeris. Iveskite skaiciu nuo 1 iki " << mokiniuKiekis << ": ";
                 cin >> nr;
             }
 
-            int i = - 1;
+            int i = nr - 1;
             string pasalintas = vardai[i];
 
             for (int k = i; k < mokiniuKiekis - 1; k++) {
-                vardai[k] = vardai [k + 1];
+                vardai[k] = vardai[k + 1];
                 pazymiuKiekis[k] = pazymiuKiekis[k + 1];
 
                 for (int j = 0; j < pazymiuKiekis[k]; j++) {
