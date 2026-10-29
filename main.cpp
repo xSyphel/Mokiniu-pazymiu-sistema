@@ -33,7 +33,7 @@ int main() {
         {
         case 1: {
             if (mokiniuKiekis >= MAX_MOKINIU) {
-                cout << "Pasiektas mokinių limitas (" << MAX_MOKINIU << ")." << endl;
+                cout << "Pasiektas mokiniu limitas (" << MAX_MOKINIU << ")." << endl;
                 break;
             }
             cout << "Koks mokinio vardas? ";
@@ -50,7 +50,7 @@ int main() {
             cin >> n;
             
             while (n < 0 || n > MAX_PAZYMIU) {
-                cout << "Pažymių kiekis turi būti nuo 0 iki " << MAX_PAZYMIU << ". Įveskite iš naujo: ";
+                cout << "Pazymiu kiekis turi buti nuo 0 iki " << MAX_PAZYMIU << ". Iveskite is naujo: ";
                 cin >> n;
             }
 
@@ -58,7 +58,7 @@ int main() {
                 cout << "Iveskite " << j + 1 << " Pazymi: ";
                 cin >> pazymiai[mokiniuKiekis][j]; 
                 while (pazymiai[mokiniuKiekis][j] < 1 || pazymiai[mokiniuKiekis][j] > 10) {
-                    cout << "Pazymys turi buti nuo 1 iki 10. iveskite is naujo: ";
+                    cout << "Pazymys turi buti nuo 1 iki 10. Iveskite is naujo: ";
                     cin >> pazymiai[mokiniuKiekis][j];
                 };
             }
@@ -70,7 +70,7 @@ int main() {
             }
         case 2:
             if (mokiniuKiekis == 0) {
-                cout << "Sąrašas tuščias." << endl;
+                cout << "Sarasas tuscias." << endl;
                 break;
             }
 
@@ -86,16 +86,16 @@ int main() {
             break;
         case 3: {
             if (mokiniuKiekis == 0) {
-            cout << "Sąrašas tuščias." << endl;
+            cout << "Sarasas tuscias." << endl;
             break;
             }
 
             int nr;
-            cout << "Įveskite mokinio numerį (1-" << mokiniuKiekis << "): ";
+            cout << "Iveskite mokinio numeri (1-" << mokiniuKiekis << "): ";
             cin >> nr;
 
             while (nr < 1 || nr > mokiniuKiekis) {
-                cout << "Neteisingas mokinio numeris. Įveskite skaičių nuo 1 iki " << mokiniuKiekis << ": ";
+                cout << "Neteisingas mokinio numeris. Iveskite skaiciu nuo 1 iki " << mokiniuKiekis << ": ";
                 cin >> nr;
             }
 
@@ -103,7 +103,7 @@ int main() {
 
             cout << vardai[i] << ": ";
             if (pazymiuKiekis[i] == 0) {
-                cout << "pažymių nėra.";
+                cout << "Pazymiu nera.";
             }
             for (int j = 0; j < pazymiuKiekis[i]; j++) {
                 cout << pazymiai[i][j] << " ";
@@ -159,12 +159,12 @@ int main() {
         }
         case 5: {
             if (mokiniuKiekis == 0) {
-                cout << "Sąrašas tuščias." << endl;
+                cout << "Sarasas tuscias." << endl;
                 break;
             }
 
             int nr;
-            cout << "Iveskite mokinio numeri (1- " << mokiniuKiekis << "): ";
+            cout << "Iveskite mokinio numeri (1-" << mokiniuKiekis << "): ";
             cin >> nr;
 
             while (nr < 1 || nr > mokiniuKiekis) {
@@ -190,7 +190,7 @@ int main() {
         }
         case 6: {
             if (mokiniuKiekis == 0) {
-                cout << "Sąrašas tuščias." << endl;
+                cout << "Sarasas tuscias." << endl;
                 break;
             }
             
@@ -224,7 +224,7 @@ int main() {
             cout << "Iseiti" << endl;
             break;
         default:
-            cout << "neteisingas pasirinkimas, bandykite dar karta." << endl;
+            cout << "Neteisingas pasirinkimas, bandykite dar karta." << endl;
             break;
         }
 
