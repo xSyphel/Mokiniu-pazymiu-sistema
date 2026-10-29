@@ -110,9 +110,52 @@ int main() {
             cout << endl;
             break;
             }
-        case 4:
-            cout << "4. Atnaujinti pažymį." << endl;
+        case 4:{
+            if (mokiniuKiekis == 0) {
+                cout << "Sarasas tuscias." << endl;
+                break;
+            }
+
+            int nr;
+            cout << "Iveskite mokinio numeri (1-" << mokiniuKiekis << "): ";
+            cin >> nr;
+
+            while (nr < 1 || nr > mokiniuKiekis) {
+                cout << "Neteisingas mokinio numeris. Iveskite skaiciu nuo 1 iki " << mokiniuKiekis << ": ";
+                cin >> nr;
+            }
+
+            int i = nr - 1;
+
+            if (pazymiuKiekis[i] == 0) {
+                cout << "Mokinys " << vardai[i] << " pazymiu neturi." << endl;
+                break;
+            }
+
+            int pnr;
+            cout << "Iveskite pazymio numeri (1-" << pazymiuKiekis[i] << "): ";
+            cin >> pnr;
+
+            while (pnr < 1 || pnr > pazymiuKiekis[i]) {
+                cout << "Neteisingas pazymio numeris. Iveskite skaiciu nuo 1 iki " << pazymiuKiekis[i] << ": ";
+                cin >> pnr;
+            }
+            
+            int j = pnr - 1;
+
+            int naujas;
+            cout << "Dabartinis pazymys: " << pazymiai[i][j] << ". Iveskite nauja: ";
+            cin >> naujas;
+
+            while (naujas < 1 | naujas > 10) {
+                cout << "Pazymys turi buti nuo 1 iki 10. Iveskite is naujo: ";
+                cin >> naujas;
+            }
+
+            pazymiai[i][j] = naujas;
+            cout << "Pazymys atnaujintas." << endl;
             break;
+        }
         case 5:
             cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
             break;
