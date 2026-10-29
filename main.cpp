@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -156,9 +157,37 @@ int main() {
             cout << "Pazymys atnaujintas." << endl;
             break;
         }
-        case 5:
-            cout << "5. Apskaičiuoti mokinio vidurkį." << endl;
+        case 5: {
+            if (mokiniuKiekis == 0) {
+                cout << "Sąrašas tuščias." << endl;
+                break;
+            }
+
+            int nr;
+            cout << "Iveskite mokinio numeri (1- " << mokiniuKiekis << "): ";
+            cin >> nr;
+
+            while (nr < 1 || nr > mokiniuKiekis) {
+                cout << "Neteisingas mokinio numeris. Iveskite skaiciu nuo 1 iki " << mokiniuKiekis << ": ";
+                cin >> nr;
+            }
+
+            int i = nr - 1;
+
+            if (pazymiuKiekis[i] == 0) {
+                cout << "Mokinys " << vardai[i] << " pazymiu neturi, vidurkio apskaiciuoti negalima." << endl;
+                break;
+            }
+
+            int suma = 0;
+            for (int j = 0; j < pazymiuKiekis[i]; j++) {
+                suma += pazymiai [i][j];
+            }
+
+            double vidurkis = (double)suma / pazymiuKiekis[i];
+            cout << vardai[i] << " vidurkis: " << fixed << setprecision(2) << vidurkis << endl;
             break;
+        }
         case 6: {
             if (mokiniuKiekis == 0) {
                 cout << "Sąrašas tuščias." << endl;
